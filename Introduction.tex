@@ -1,0 +1,40 @@
+
+Der in diesem Protokoll beschriebene Versuch \textit{Leistung bei Wechselstrom} befasst sich mit dem Problem der Leistung von periodisch bzw. harmonisch erregten Netzwerken. Es wird auf die verschiedenen Arten von Leistung sowie deren technische Relevanz eingegangen, und verschiedene Methoden der Bestimmung, Berechnung und Darstellung der Leistung werden genauer untersucht.
+
+\subsection{Leistung bei harmonischer Erregung}
+
+Die Grundlage der Leistungsberechnung stellt die Leistung bei harmonischer Erregung dar. Sie beschreibt für ein gegebenes lineares Netzwerk mit sinusförmigen Strömen und Spannungen die abgegebene oder aufgenommene Leistung mithilfe der komplexen Wechselstromrechnung.\\
+\\
+Für den Fall von $f=0$, d.h. bei einer Erregung mit Gleichstrom, ist bekannt das gilt:
+\begin{align*}
+P=U\cdot I
+\end{align*}
+\\
+Liegt jedoch eine harmonische Erregung vor, so gilt der obige Term nicht mehr. Strom und Spannung sind nun zeitlich abhängig und können phasenverschoben sein, weshalb man den Zeitpunkt $t$ mit in die Formel aufnehmen muss. Es ergibt sich so der Term der \textit{Momentanleistung}:
+\begin{equation} \label{eq:Momentanleistung}
+p(t)=u(t)\cdot i(t)
+\end{equation}
+\\
+Dieser gilt nun für alle Arten von Erregung und Belastung. Im Falle der harmonischen Erregung eines Verbrauchers mit den Größen:
+\begin{align*}
+u(t) &= \hat{U}\sin(\omega t + \varphi_u)\\
+i(t) &= \hat{I}\sin(\omega t + \varphi_i)
+\end{align*}
+lässt sich Formel \eqref{eq:Momentanleistung} schreiben als:
+\begin{align}
+& p(t) =& \hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i)\nonumber \\
+\Leftrightarrow & p(t) =& \frac{\hat{U}\hat{I}}{2}\left[\underbrace{\cos(\varphi_u-\varphi_i)[1-\cos(2(\omega t + \varphi_u))]}_{p_w(t)}-\underbrace{\sin(\varphi_u-\varphi_i)\cdot\sin(2(\omega t + \varphi_u)}_{p_B(t)}\right] \label{eq:MomLeistungSplit}
+\end{align}
+
+Bei genauerer Betrachtung von Formel \eqref{eq:MomLeistungSplit} wird festgestellt:
+\begin{enumerate}
+\item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$. 
+\item Der Mittelwert der Leistung pendelt nicht mehr um 0, sondern um einen Wert angegeben von:
+\begin{equation}
+\frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
+\end{equation}
+\item Es gibt einen um $\frac{\pi}{2}$ zu dieser Gleichanteil-verursachenden Schwingung versetzte Leistung, welche im Durchschnitt keinen Beitrag zur aufgenommenen Leistung gibt. Dieser besitzt eine Amplitude von:
+\begin{equation}
+-\frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlindanteil}
+\end{equation}
+\end{enumerate}
