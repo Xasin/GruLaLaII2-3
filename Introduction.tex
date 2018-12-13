@@ -21,20 +21,35 @@ u(t) &= \hat{U}\sin(\omega t + \varphi_u)\\
 i(t) &= \hat{I}\sin(\omega t + \varphi_i)
 \end{align*}
 lässt sich Formel \eqref{eq:Momentanleistung} schreiben als:
-\begin{align}
-& p(t) =& \hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i)\nonumber \\
-\Leftrightarrow & p(t) =& \frac{\hat{U}\hat{I}}{2}\left[\underbrace{\cos(\varphi_u-\varphi_i)[1-\cos(2(\omega t + \varphi_u))]}_{p_w(t)}-\underbrace{\sin(\varphi_u-\varphi_i)\cdot\sin(2(\omega t + \varphi_u)}_{p_B(t)}\right] \label{eq:MomLeistungSplit}
-\end{align}
+\begin{eqnarray}
+&p(t)=&\hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i) \nonumber \\
+\Leftrightarrow & p(t) =&\frac{\hat{U}\hat{I}}{2}\left[\underbrace{\cos(\varphi_u-\varphi_i)[1-\cos(2(\omega t + \varphi_u))]}_{p_w(t)}-\underbrace{\sin(\varphi_u-\varphi_i)\cdot\sin(2(\omega t + \varphi_u))}_{p_B(t)}\right] \label{eq:MomLeistungSplit}
+\end{eqnarray}
 
 Bei genauerer Betrachtung von Formel \eqref{eq:MomLeistungSplit} wird festgestellt:
 \begin{enumerate}
 \item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$. 
-\item Der Mittelwert der Leistung pendelt nicht mehr um 0, sondern um einen Wert angegeben von:
+\item Der Mittelwert der Leistung pendelt nicht mehr um 0, es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
 \begin{equation}
-\frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
+P = \frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
 \end{equation}
-\item Es gibt einen um $\frac{\pi}{2}$ zu dieser Gleichanteil-verursachenden Schwingung versetzte Leistung, welche im Durchschnitt keinen Beitrag zur aufgenommenen Leistung gibt. Dieser besitzt eine Amplitude von:
+\item Es gibt einen um $\frac{\pi}{2}$ zu dieser Gleichanteil-verursachenden Schwingung versetzte Leistung, welche im Durchschnitt keinen Beitrag zur aufgenommenen Leistung gibt. Diese als Blindleistung "Q" bezeichnete Leistung hat eine Amplitude von:
 \begin{equation}
--\frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlindanteil}
+Q = -\frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlindanteil}
 \end{equation}
 \end{enumerate}
+
+Die durch Gleichung \eqref{eq:LeistungGleichanteil} angegebene Wirkleistung ist die in der Maschine tatsächlich umgesetzte elektrische Leistung, die durch Gleichung \eqref{eq:LeistungBlindanteil} angegebene Blindleistung wird periodisch von der Maschine aufgenommen und wieder abgegeben, und stellt somit einen unerwünschten Energieaustausch dar.
+
+Die \textit{Scheinleistung} ist die Amplitude der Momentanleistung. Da Blind- und Wirkleistung exakt $\frac{\pi}{2}$ zueinander versetzt sind, lässt sie sich berechnen als:
+\begin{equation}
+S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\varphi_u - \varphi_i)^2 + \sin(\varphi_u - \varphi_i)^2)}_{1}
+\end{equation}
+
+\subsection{Leistung bei periodischer Erregung}
+Liegt ein lineares Netzwerk mit nicht-harmonischer Erregung vor, oder wird ein nichtlineares Bauteil verwendet, so liegen an einem Verbraucher-Zweipol keine harmonischen Ströme und Spannungen mehr an. Dementsprechend können die obigen Formeln nicht mehr angewendet werden. Insbesondere gelten Formeln \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} für Wirk- und Blindleistung nicht mehr.
+
+Durch Verfahren wie der Fourier-Transformation der am Verbraucher gemessenen Ströme und Spannungen kann jedoch auch eine Formel der Momentanleistung berechnet werden. Setzt man die Fourier-Transformierten Ströme und Spannungen in Gleichung \eqref{eq:Momentanleistung} ein, so erhält man:
+\begin{equation}
+p(t)=\sum\left(\hat{I}_\mu\sin(\mu \omega + \varphi_{i\mu})\right) \cdot
+\end{equation}
