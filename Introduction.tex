@@ -28,14 +28,16 @@ lässt sich Formel \eqref{eq:Momentanleistung} schreiben als:
 
 Bei genauerer Betrachtung von Formel \eqref{eq:MomLeistungSplit} wird festgestellt:
 \begin{enumerate}
-\item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$. 
-\item Der Mittelwert der Leistung pendelt nicht mehr um 0, es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
+\item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$ bzw. $\sin(\mathbf{2\omega t} + 2\varphi_u)$.
+
+\item Der Durchschnitt der Leistung liegt nicht bei 0, es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
 \begin{equation}
 P = \frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
 \end{equation}
-\item Es gibt einen um $\frac{\pi}{2}$ zu dieser Gleichanteil-verursachenden Schwingung versetzte Leistung, welche im Durchschnitt keinen Beitrag zur aufgenommenen Leistung gibt. Diese als Blindleistung "Q" bezeichnete Leistung hat eine Amplitude von:
+
+\item Es gibt einen um $\frac{\pi}{2}$ zu dieser Gleichanteil-verursachenden Schwingung versetzte Leistung, welche im Durchschnitt keinen Beitrag zur aufgenommenen Leistung beiträgt. Diese als Blindleistung "Q" bezeichnete Leistung hat eine Amplitude von:
 \begin{equation}
-Q = -\frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlindanteil}
+Q = \frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlindanteil}
 \end{equation}
 \end{enumerate}
 
@@ -46,10 +48,46 @@ Die \textit{Scheinleistung} ist die Amplitude der Momentanleistung. Da Blind- un
 S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\varphi_u - \varphi_i)^2 + \sin(\varphi_u - \varphi_i)^2)}_{1}
 \end{equation}
 
+Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdrücken. Diese kodiert den Phasenwinkel von Strom und Spannung im Argument der komplexen Zahl, während die Amplitude der Schwingungen im Betrag zu finden ist. Man kann so also auch schreiben:
+\begin{equation}
+\underline{S} = \underline{U}\cdot\underline{I}^* = UI\cdot e^{i(\varphi_u-\varphi_i)}
+\end{equation}
+
+Gleichungen \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} können nun auch mit der komplexen Scheinleistung ausgedrückt werden:
+\begin{eqnarray*}
+P=& \mbox{real}(\underline{S}) = UI\cdot \cos(\varphi_u-\varphi_i)\\
+Q=& \mbox{img}(\underline{S}) = UI\cdot \sin(\varphi_u-\varphi_i)
+\end{eqnarray*}
+
 \subsection{Leistung bei periodischer Erregung}
 Liegt ein lineares Netzwerk mit nicht-harmonischer Erregung vor, oder wird ein nichtlineares Bauteil verwendet, so liegen an einem Verbraucher-Zweipol keine harmonischen Ströme und Spannungen mehr an. Dementsprechend können die obigen Formeln nicht mehr angewendet werden. Insbesondere gelten Formeln \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} für Wirk- und Blindleistung nicht mehr.
 
 Durch Verfahren wie der Fourier-Transformation der am Verbraucher gemessenen Ströme und Spannungen kann jedoch auch eine Formel der Momentanleistung berechnet werden. Setzt man die Fourier-Transformierten Ströme und Spannungen in Gleichung \eqref{eq:Momentanleistung} ein, so erhält man:
+\begin{equation*}
+p(t)=u(t)\cdot i(t) = \sum\sum\left(I_\nu\sin(\nu \omega t+ \varphi_{i\nu})\right) \cdot \left(U_\mu\sin(\mu \omega t + \varphi_{u\mu})\right)
+\end{equation*}
+
+Durch ähnliche trigonometrische Umformungen wie für Gleichung \eqref{eq:MomLeistungSplit} verwendet wurden, erhält man:
 \begin{equation}
-p(t)=\sum\left(\hat{I}_\mu\sin(\mu \omega + \varphi_{i\mu})\right) \cdot
+p_{\mu\nu}(t)=\frac{\hat{U}_\mu\hat{I}_\nu}{2}\left[\cos((\mu-\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))-\cos((\mu+\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))\right]
 \end{equation}
+
+Aus dieser Gleichung kann man erkennen, dass nur Oberwellen gleicher Frequenz einen Gleichanteil, und somit Wirkleistung, beitragen können. Alle anderen Kombinationen schwingen immer um 0, und tragen somit nur zur Blindleistung bei.
+
+Die Wirkleistung eines nicht-harmonischen bzw. nichtliearen Systemes lässt sich somit berechnen als:
+\begin{equation}
+P_{ges}=\sum_{\mu = 1}^mP_{\mu=\nu}=\sum_{\mu = 1}^m\frac{\hat{U}_\mu\hat{I}_\mu}{2}\cos(\varphi_{u\mu}-\varphi_{i\mu})
+\end{equation}
+
+\subsection{Leistungsmessung}
+Die Messung der Leistung eines elektrischen Verbrauchers ist eine in der Praxis sehr wichtige Aufgabe, so z.B. um den Stromverbrauch von Geräten zu bestimmen. Es sollen hier also zwei im späteren Versuchsverlauf genutzte Wege der (Wirk)Leistungsbestimmung genauer erläutert werden.
+
+\subsubsection{Darstellung der Leistung}
+Um die Phasenverschiebung der harmonischen Leistung bzw. die Form der periodischen Leistung bei nicht-harmonischer Erregung genauer betrachten zu können ist es oft nötig, die $p(t)$-Kurve dar zu stellen. Da fast immer mit Frequenzen von einigen zehn bis hundert Herz gearbeitet wird, lassen sich normale Multimeter nicht mehr verwenden.
+
+Trägheitsarme Anzeigegeräte wie Logikanalysatoren oder Oszilloskope lassen sich jedoch gut verwenden, da sie analoge Signale bis zu einigen tausend Herz anzeigen können. Da sie meist nur Spannungseingänge besitzen, wird der zu messende Strom über einen möglichst geringen Wiederstand geleitet, und die dort abfallende Spannung gemessen. So lässt sich die Phasenverschiebung zwischen Strom und Spannung ablesen, aber auch der genaue Verlauf bei einer nichtlinearen Belastung.
+
+Oszilloskope besitzen zusätzlich eine Funktion zum Multiplizieren der Spannungsverläufe. So lässt sich eine zur Leistung proportionale Kurve darstellen, an der sich die doppelte Frequenz, Phasenverschiebung und der Gleichanteil ablesen lassen.
+
+\subsubsection{Wirkleistungsmessung}
+Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschiebung oder die Blindleistung von Interesse, so können auch träge Messgeräte, welche den Mittelwert eines hochfrequenten Signals bilden, zusammen mit einem sog. Multiplikator verwendet werden, um die in einem Verbraucher aufgenommene Wirkleistung zu bestimmen. Der Multiplikator kann hierbei entweder dem Messgerät vorgeschaltet sein, oder aber im Messgerät selbst durch mechanische Verfahren eingebaut sein.
