@@ -50,7 +50,7 @@ S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\
 
 Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdrücken. Diese kodiert den Phasenwinkel von Strom und Spannung im Argument der komplexen Zahl, während die Amplitude der Schwingungen im Betrag zu finden ist. Man kann so also auch schreiben:
 \begin{equation}
-\underline{S} = \underline{U}\cdot\underline{I}^* = UI\cdot e^{i(\varphi_u-\varphi_i)}
+\underline{S} = \underline{U}\cdot\underline{I}^* = UI\cdot e^{i(\varphi_u-\varphi_i)} \label{eq:KomplexS}
 \end{equation}
 
 Gleichungen \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} können nun auch mit der komplexen Scheinleistung ausgedrückt werden:
@@ -85,9 +85,15 @@ Die Messung der Leistung eines elektrischen Verbrauchers ist eine in der Praxis 
 \subsubsection{Darstellung der Leistung}
 Um die Phasenverschiebung der harmonischen Leistung bzw. die Form der periodischen Leistung bei nicht-harmonischer Erregung genauer betrachten zu können ist es oft nötig, die $p(t)$-Kurve dar zu stellen. Da fast immer mit Frequenzen von einigen zehn bis hundert Herz gearbeitet wird, lassen sich normale Multimeter nicht mehr verwenden.
 
-Trägheitsarme Anzeigegeräte wie Logikanalysatoren oder Oszilloskope lassen sich jedoch gut verwenden, da sie analoge Signale bis zu einigen tausend Herz anzeigen können. Da sie meist nur Spannungseingänge besitzen, wird der zu messende Strom über einen möglichst geringen Wiederstand geleitet, und die dort abfallende Spannung gemessen. So lässt sich die Phasenverschiebung zwischen Strom und Spannung ablesen, aber auch der genaue Verlauf bei einer nichtlinearen Belastung.
+Trägheitsarme Anzeigegeräte wie Logikanalysatoren oder Oszilloskope lassen sich jedoch gut verwenden, da sie analoge Signale bis zu einigen tausend Herz anzeigen können. Da sie meist nur Spannungseingänge besitzen, wird der zu messende Strom über einen möglichst geringen Widerstand geleitet, und die dort abfallende Spannung gemessen. So lässt sich die Phasenverschiebung zwischen Strom und Spannung ablesen, aber auch der genaue Verlauf bei einer nichtlinearen Belastung.
 
 Oszilloskope besitzen zusätzlich eine Funktion zum Multiplizieren der Spannungsverläufe. So lässt sich eine zur Leistung proportionale Kurve darstellen, an der sich die doppelte Frequenz, Phasenverschiebung und der Gleichanteil ablesen lassen.
 
 \subsubsection{Wirkleistungsmessung}
 Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschiebung oder die Blindleistung von Interesse, so können auch träge Messgeräte, welche den Mittelwert eines hochfrequenten Signals bilden, zusammen mit einem sog. Multiplikator verwendet werden, um die in einem Verbraucher aufgenommene Wirkleistung zu bestimmen. Der Multiplikator kann hierbei entweder dem Messgerät vorgeschaltet sein, oder aber im Messgerät selbst durch mechanische Verfahren eingebaut sein.
+
+Wird an den Eingängen des Multiplikators nun die am Verbraucher anliegende Spannung und die über einen Messwiderstand abfallende, zum Strom proportionale Spannung, angelegt, so bildet dieser nun nach Gleichung \eqref{eq:Momentanleistung} einen zur Momentanleistung proportionalen Wert. Wird dieser an ein träges Messgerät angeschlossen, so bildet dieses bei höheren Frequenzen den Durchschnitt der Momentanleistung, d.h. nach Gleichung \eqref{eq:MomLeistungSplit} einen zur Wirkleistung proportionalen Wert. Durch Bestimmung der Proportionalitätskonstante kann nun aus dem Ausschlag des Messgerätes die Wirkleistung abgelesen werden.
+
+\subsubsection{Blindleistungsmessung}
+Es lässt sich auch die Blindleistung mit einem zur Wirkleistungsmessung ähnlichem Aufbau messen. Da, angegeben von Gleichung \eqref{eq:MomLeistungSplit} die Blindleistung um $\frac{\pi}{2}$ von der Wirkleistung phasenverschoben ist, kann sie durch Phasenverschiebung der Spannung relativ zum Strom gemessen werden.
+Durch Einbau eines passend gewählten Kondensators, etwa $\frac{1}{\omega C} = 10R_i$, wird diese Phasenverschiebung der gemessenen Spannung erreicht. Durch den zusätzlichen Widerstand jedoch verringert sich auch die Amplitude der gemessenen Spannung, und somit auch die der Momentanleistung. Dies muss in der Proportionalitätskonstante mit beachtet werden.
