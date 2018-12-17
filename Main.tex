@@ -9,6 +9,9 @@
 
 \usepackage[german]{babel}
 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{Sources.bib}
+
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 \numberwithin{equation}{section}
 
@@ -35,6 +38,8 @@
 \input{Resonanzfall.tex}
 
 \subsection{Leistung einer nichtlinearen Belastung}
+\input{Nichtlinear.tex}
+
 \subsection{Wirkleistungsbestimmung}
 \subsection{Messung der Blindleistung}
 
@@ -43,6 +48,7 @@
 \setcounter{section}{0}
 \renewcommand{\thesection}{\Alph{section}}
 \section{Literaturverzeichnis}
+\printbibliography
 \section{Verwendete Geräte und Tabellen}
 
 \end{document}
