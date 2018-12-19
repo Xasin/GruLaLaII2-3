@@ -46,6 +46,7 @@ Die durch Gleichung \eqref{eq:LeistungGleichanteil} angegebene Wirkleistung ist 
 Die \textit{Scheinleistung} ist die Amplitude der Momentanleistung. Da Blind- und Wirkleistung exakt $\frac{\pi}{2}$ zueinander versetzt sind, lässt sie sich berechnen als:
 \begin{equation}
 S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\varphi_u - \varphi_i)^2 + \sin(\varphi_u - \varphi_i)^2)}_{1}
+\label{eq:ScheinleistungPythagoras}
 \end{equation}
 
 Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdrücken. Diese kodiert den Phasenwinkel von Strom und Spannung im Argument der komplexen Zahl, während die Amplitude der Schwingungen im Betrag zu finden ist. Man kann so also auch schreiben:
@@ -54,10 +55,10 @@ Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdr
 \end{equation}
 
 Gleichungen \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} können nun auch mit der komplexen Scheinleistung ausgedrückt werden:
-\begin{eqnarray*}
-P=& \mbox{real}(\underline{S}) = UI\cdot \cos(\varphi_u-\varphi_i)\\
-Q=& \mbox{img}(\underline{S}) = UI\cdot \sin(\varphi_u-\varphi_i)
-\end{eqnarray*}
+\begin{eqnarray}
+P=& \mbox{real}(\underline{S}) = UI\cdot \cos(\varphi_u-\varphi_i)\label{eq:KomplexP}\\
+Q=& \mbox{img}(\underline{S}) = UI\cdot \sin(\varphi_u-\varphi_i) \label{eq:KomplexQ}
+\end{eqnarray}
 
 \subsection{Leistung bei periodischer Erregung}
 Liegt ein lineares Netzwerk mit nicht-harmonischer Erregung vor, oder wird ein nichtlineares Bauteil verwendet, so liegen an einem Verbraucher-Zweipol keine harmonischen Ströme und Spannungen mehr an. Dementsprechend können die obigen Formeln nicht mehr angewendet werden. Insbesondere gelten Formeln \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} für Wirk- und Blindleistung nicht mehr.
@@ -95,5 +96,6 @@ Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschieb
 Wird an den Eingängen des Multiplikators nun die am Verbraucher anliegende Spannung und die über einen Messwiderstand abfallende, zum Strom proportionale Spannung, angelegt, so bildet dieser nun nach Gleichung \eqref{eq:Momentanleistung} einen zur Momentanleistung proportionalen Wert. Wird dieser an ein träges Messgerät angeschlossen, so bildet dieses bei höheren Frequenzen den Durchschnitt der Momentanleistung, d.h. nach Gleichung \eqref{eq:MomLeistungSplit} einen zur Wirkleistung proportionalen Wert. Durch Bestimmung der Proportionalitätskonstante kann nun aus dem Ausschlag des Messgerätes die Wirkleistung abgelesen werden.
 
 \subsubsection{Blindleistungsmessung}
+\label{sec:MessungBlindleistung}
 Es lässt sich auch die Blindleistung mit einem zur Wirkleistungsmessung ähnlichem Aufbau messen. Da, angegeben von Gleichung \eqref{eq:MomLeistungSplit} die Blindleistung um $\frac{\pi}{2}$ von der Wirkleistung phasenverschoben ist, kann sie durch Phasenverschiebung der Spannung relativ zum Strom gemessen werden.
 Durch Einbau eines passend gewählten Kondensators, etwa $\frac{1}{\omega C} = 10R_i$, wird diese Phasenverschiebung der gemessenen Spannung erreicht. Durch den zusätzlichen Widerstand jedoch verringert sich auch die Amplitude der gemessenen Spannung, und somit auch die der Momentanleistung. Dies muss in der Proportionalitätskonstante mit beachtet werden.
