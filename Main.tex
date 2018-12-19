@@ -13,10 +13,12 @@
 \addbibresource{Sources.bib}
 
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 
 \author{David Bailey}
 \title{Versuchsprotokoll 2-3}
+
+\linespread{1.1}
 
 \begin{document}
 \selectlanguage{german}
@@ -42,14 +44,18 @@
 
 \subsection{Leistungsmessung}
 \input{Wirkleistungsmessung.tex}
-\input{Blindleistungsmessung.tex}
 
+\newpage
 \section{Zusammenfassung}
+\input{Zusammenfassung.tex}
+
+\newpage
 
 \setcounter{section}{0}
 \renewcommand{\thesection}{\Alph{section}}
 \section{Literaturverzeichnis}
 \printbibliography
+\newpage
 \section{Verwendete Geräte und Tabellen}
 
 \end{document}
