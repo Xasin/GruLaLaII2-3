@@ -1,11 +1,11 @@
 
-Der in diesem Protokoll beschriebene Versuch \textit{Leistung bei Wechselstrom} befasst sich mit dem Problem der Leistung von periodisch bzw. harmonisch erregten Netzwerken. Es wird auf die verschiedenen Arten von Leistung sowie deren technische Relevanz eingegangen, und verschiedene Methoden der Bestimmung, Berechnung und Darstellung der Leistung werden genauer untersucht.
+Der in diesem Protokoll beschriebene Versuch \textit{Leistung bei Wechselstrom} befasst sich mit dem Problem der Leistung von periodisch bzw. harmonisch erregten Netzwerken. Es wird auf die verschiedenen Arten von Leistung sowie deren technische Relevanz eingegangen. Verschiedene Methoden der Bestimmung, Berechnung und Darstellung der Leistung werden genauer untersucht.
 
 \subsection{Leistung bei harmonischer Erregung}
 
 Die Grundlage der Leistungsberechnung stellt die Leistung bei harmonischer Erregung dar. Sie beschreibt für ein gegebenes lineares Netzwerk mit sinusförmigen Strömen und Spannungen die abgegebene oder aufgenommene Leistung mithilfe der komplexen Wechselstromrechnung.\\
 \\
-Für den Fall von $f=0$, d.h. bei einer Erregung mit Gleichstrom, ist bekannt das gilt:
+Für den Fall von $f=0$, d.h. bei einer Erregung mit Gleichstrom, gilt:
 \begin{align*}
 P=U\cdot I
 \end{align*}
@@ -21,16 +21,18 @@ u(t) &= \hat{U}\sin(\omega t + \varphi_u)\\
 i(t) &= \hat{I}\sin(\omega t + \varphi_i)
 \end{align*}
 lässt sich Formel \eqref{eq:Momentanleistung} schreiben als:
+\begin{small}
 \begin{eqnarray}
 &p(t)=&\hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i) \nonumber \\
 \Leftrightarrow & p(t) =&\frac{\hat{U}\hat{I}}{2}\left[\underbrace{\cos(\varphi_u-\varphi_i)[1-\cos(2(\omega t + \varphi_u))]}_{p_w(t)}-\underbrace{\sin(\varphi_u-\varphi_i)\cdot\sin(2(\omega t + \varphi_u))}_{p_B(t)}\right] \label{eq:MomLeistungSplit}
 \end{eqnarray}
+\end{small}
 
 Bei genauerer Betrachtung von Formel \eqref{eq:MomLeistungSplit} wird festgestellt:
 \begin{enumerate}
 \item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$ bzw. $\sin(\mathbf{2\omega t} + 2\varphi_u)$.
 
-\item Der Durchschnitt der Leistung liegt nicht bei 0, es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
+\item Der Durchschnitt der Leistung liegt nicht bei null. Es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
 \begin{equation}
 P = \frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
 \end{equation}
@@ -43,7 +45,7 @@ Q = \frac{\hat{U}\hat{I}}{2}\sin(\varphi_u - \varphi_i) \label{eq:LeistungBlinda
 
 Die durch Gleichung \eqref{eq:LeistungGleichanteil} angegebene Wirkleistung ist die in der Maschine tatsächlich umgesetzte elektrische Leistung, die durch Gleichung \eqref{eq:LeistungBlindanteil} angegebene Blindleistung wird periodisch von der Maschine aufgenommen und wieder abgegeben, und stellt somit einen unerwünschten Energieaustausch dar.
 
-Die \textit{Scheinleistung} ist die Amplitude der Momentanleistung. Da Blind- und Wirkleistung exakt $\frac{\pi}{2}$ zueinander versetzt sind, lässt sie sich berechnen als:
+Die \textit{Scheinleistung} ist die Amplitude der Momentanleistung. Da Blind- und Wirkleistung exakt $\frac{\pi}{2}$ zueinander versetzt sind, wird die Scheinleistung berechnet als:
 \begin{equation}
 S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\varphi_u - \varphi_i)^2 + \sin(\varphi_u - \varphi_i)^2)}_{1}
 \label{eq:ScheinleistungPythagoras}
@@ -61,21 +63,21 @@ Q=& \mbox{img}(\underline{S}) = UI\cdot \sin(\varphi_u-\varphi_i) \label{eq:Komp
 \end{eqnarray}
 
 \subsection{Leistung bei periodischer Erregung}
-Liegt ein lineares Netzwerk mit nicht-harmonischer Erregung vor, oder wird ein nichtlineares Bauteil verwendet, so liegen an einem Verbraucher-Zweipol keine harmonischen Ströme und Spannungen mehr an. Dementsprechend können die obigen Formeln nicht mehr angewendet werden. Insbesondere gelten Formeln \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} für Wirk- und Blindleistung nicht mehr.
+Liegt ein lineares Netzwerk mit nicht-harmonischer Erregung vor oder wird ein nichtlineares Bauteil verwendet, so liegen an einem Verbraucherzweipol keine harmonischen Ströme und Spannungen mehr an. Dementsprechend können die obigen Formeln nicht mehr angewendet werden. Insbesondere gelten Formeln \eqref{eq:LeistungGleichanteil} und \eqref{eq:LeistungBlindanteil} für Wirk- und Blindleistung nicht mehr.
 
 Durch Verfahren wie der Fourier-Transformation der am Verbraucher gemessenen Ströme und Spannungen kann jedoch auch eine Formel der Momentanleistung berechnet werden. Setzt man die Fourier-Transformierten Ströme und Spannungen in Gleichung \eqref{eq:Momentanleistung} ein, so erhält man:
 \begin{equation*}
 p(t)=u(t)\cdot i(t) = \sum\sum\left(I_\nu\sin(\nu \omega t+ \varphi_{i\nu})\right) \cdot \left(U_\mu\sin(\mu \omega t + \varphi_{u\mu})\right)
 \end{equation*}
 
-Durch ähnliche trigonometrische Umformungen wie für Gleichung \eqref{eq:MomLeistungSplit} verwendet wurden, erhält man:
+Durch ähnliche trigonometrische Umformungen wie die in Gleichung \eqref{eq:MomLeistungSplit} verwendeten, erhält man:
 \begin{equation}
 p_{\mu\nu}(t)=\frac{\hat{U}_\mu\hat{I}_\nu}{2}\left[\cos((\mu-\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))-\cos((\mu+\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))\right]
 \end{equation}
 
 Aus dieser Gleichung kann man erkennen, dass nur Oberwellen gleicher Frequenz einen Gleichanteil, und somit Wirkleistung, beitragen können. Alle anderen Kombinationen schwingen immer um 0, und tragen somit nur zur Blindleistung bei.
 
-Die Wirkleistung eines nicht-harmonischen bzw. nichtliearen Systemes lässt sich somit berechnen als:
+Die Wirkleistung eines nichtharmonischen bzw. nichtliearen Systemes lässt sich somit berechnen als:
 \begin{equation}
 P_{ges}=\sum_{\mu = 1}^mP_{\mu=\nu}=\sum_{\mu = 1}^m\frac{\hat{U}_\mu\hat{I}_\mu}{2}\cos(\varphi_{u\mu}-\varphi_{i\mu}) \label{eq:WirkleistungFourier}
 \end{equation}
@@ -84,18 +86,18 @@ P_{ges}=\sum_{\mu = 1}^mP_{\mu=\nu}=\sum_{\mu = 1}^m\frac{\hat{U}_\mu\hat{I}_\mu
 Die Messung der Leistung eines elektrischen Verbrauchers ist eine in der Praxis sehr wichtige Aufgabe, so z.B. um den Stromverbrauch von Geräten zu bestimmen. Es sollen hier also zwei im späteren Versuchsverlauf genutzte Wege der (Wirk)Leistungsbestimmung genauer erläutert werden.
 
 \subsubsection{Darstellung der Leistung}
-Um die Phasenverschiebung der harmonischen Leistung bzw. die Form der periodischen Leistung bei nicht-harmonischer Erregung genauer betrachten zu können ist es oft nötig, die $p(t)$-Kurve dar zu stellen. Da fast immer mit Frequenzen von einigen zehn bis hundert Herz gearbeitet wird, lassen sich normale Multimeter nicht mehr verwenden.
+Um die Phasenverschiebung der harmonischen Leistung bzw. die Form der periodischen Leistung bei nichtharmonischer Erregung genauer betrachten zu können ist es oft nötig, die $p(t)$-Kurve darzustellen. Da fast immer mit Frequenzen von einigen zehn bis hundert Herz gearbeitet wird, lassen sich normale Multimeter nicht mehr verwenden.
 
-Trägheitsarme Anzeigegeräte wie Logikanalysatoren oder Oszilloskope lassen sich jedoch gut verwenden, da sie analoge Signale bis zu einigen tausend Herz anzeigen können. Da sie meist nur Spannungseingänge besitzen, wird der zu messende Strom über einen möglichst geringen Widerstand geleitet, und die dort abfallende Spannung gemessen. So lässt sich die Phasenverschiebung zwischen Strom und Spannung ablesen, aber auch der genaue Verlauf bei einer nichtlinearen Belastung.
+Trägheitsarme Anzeigegeräte wie Logikanalysatoren oder Oszilloskope lassen sich jedoch gut verwenden, da sie analoge Signale bis zu einigen tausend Herz anzeigen können. Da sie meist nur Spannungseingänge besitzen, wird der zu messende Strom über einen möglichst geringen Widerstand geleitet und die dort abfallende Spannung gemessen. So lässt sich die Phasenverschiebung zwischen Strom und Spannung ablesen, aber auch der genaue Verlauf bei einer nichtlinearen Belastung.
 
 Oszilloskope besitzen zusätzlich eine Funktion zum Multiplizieren der Spannungsverläufe. So lässt sich eine zur Leistung proportionale Kurve darstellen, an der sich die doppelte Frequenz, Phasenverschiebung und der Gleichanteil ablesen lassen.
 
 \subsubsection{Wirkleistungsmessung}
-Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschiebung oder die Blindleistung von Interesse, so können auch träge Messgeräte, welche den Mittelwert eines hochfrequenten Signals bilden, zusammen mit einem sog. Multiplikator verwendet werden, um die in einem Verbraucher aufgenommene Wirkleistung zu bestimmen. Der Multiplikator kann hierbei entweder dem Messgerät vorgeschaltet sein, oder aber im Messgerät selbst durch mechanische Verfahren eingebaut sein.
+Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschiebung oder die Blindleistung von Interesse, so können auch träge Messgeräte, welche den Mittelwert eines hochfrequenten Signals bilden, zusammen mit einem sog. Multiplikator verwendet werden, um die in einem Verbraucher aufgenommene Wirkleistung zu bestimmen. Der Multiplikator kann hierbei entweder dem Messgerät vorgeschaltet sein oder aber im Messgerät selbst durch mechanische Verfahren eingebaut sein.
 
 Wird an den Eingängen des Multiplikators nun die am Verbraucher anliegende Spannung und die über einen Messwiderstand abfallende, zum Strom proportionale Spannung, angelegt, so bildet dieser nun nach Gleichung \eqref{eq:Momentanleistung} einen zur Momentanleistung proportionalen Wert. Wird dieser an ein träges Messgerät angeschlossen, so bildet dieses bei höheren Frequenzen den Durchschnitt der Momentanleistung, d.h. nach Gleichung \eqref{eq:MomLeistungSplit} einen zur Wirkleistung proportionalen Wert. Durch Bestimmung der Proportionalitätskonstante kann nun aus dem Ausschlag des Messgerätes die Wirkleistung abgelesen werden.
 
 \subsubsection{Blindleistungsmessung}
 \label{sec:MessungBlindleistung}
-Es lässt sich auch die Blindleistung mit einem zur Wirkleistungsmessung ähnlichem Aufbau messen. Da, angegeben von Gleichung \eqref{eq:MomLeistungSplit} die Blindleistung um $\frac{\pi}{2}$ von der Wirkleistung phasenverschoben ist, kann sie durch Phasenverschiebung der Spannung relativ zum Strom gemessen werden.
-Durch Einbau eines passend gewählten Kondensators, etwa $\frac{1}{\omega C} = 10R_i$, wird diese Phasenverschiebung der gemessenen Spannung erreicht. Durch den zusätzlichen Widerstand jedoch verringert sich auch die Amplitude der gemessenen Spannung, und somit auch die der Momentanleistung. Dies muss in der Proportionalitätskonstante mit beachtet werden.
+Es lässt sich auch die Blindleistung mit einem zur Wirkleistungsmessung ähnlichem Aufbau messen. Da, angegeben von Gleichung \eqref{eq:MomLeistungSplit}, die Blindleistung um $\frac{\pi}{2}$ von der Wirkleistung phasenverschoben ist, kann sie durch Phasenverschiebung der Spannung relativ zum Strom gemessen werden.
+Durch Einbau eines passend gewählten Kondensators, etwa $\frac{1}{\omega C} = 10R_i$, wird diese Phasenverschiebung der gemessenen Spannung erreicht. Durch den zusätzlichen Widerstand jedoch verringert sich auch die Amplitude der gemessenen Spannung und somit auch die der Momentanleistung. Dies muss in der Proportionalitätskonstante mit beachtet werden.

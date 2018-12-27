@@ -2,7 +2,7 @@
 Dieser Versuch befasst sich mit der an einer Diode, einem nichtlinearem Bauteil, gemessenen Momentanleistung. Es wird kurz auf den Zusammenhang zwischen Strom, Spannung und Momentanleistung eingegangen, und eine vereinfachte Fourier-Transformation wird durchgeführt.
 
 \subsubsection{Versuchsaufbau}
-Der Versuchsaufbau ähnelt weitestgehend dem in Abschnitt \ref{sec:Aufbau2.2.1} beschriebenem. Die Verbraucher werden jedoch ersetzt durch eine Diode sowie einem Vorwiderstand von $R_V=50\Omega$. $u_I(t)$ und $u_U$ werden weiterhin im Oszilloskop zu einer zu $p(t)$ proportionalen Kurve multipliziert.
+Der Versuchsaufbau ähnelt weitestgehend dem in Abschnitt \ref{sec:Aufbau2.2.1} beschriebenen. Die Verbraucher werden jedoch ersetzt durch eine Diode sowie einem Vorwiderstand von $R_V=50\Omega$. $u_I(t)$ und $u_U$ werden weiterhin im Oszilloskop zu einer zu $p(t)$ proportionalen Kurve multipliziert.
 $R_I$ wird so eingestellt, dass das Spannungsmessgerät $u_{ges} = u_{max} = 9V$ anzeigt.
 
 \subsubsection{Auswertung der Momentanleistungskurve}
@@ -17,7 +17,7 @@ Wie in Abschnitt \ref{sec:Versuch2.2.1} erläutert wird die Momentanleistungskur
 \end{figure}
 
 Deutlich zu sehen ist die nichtlineare Eigenschaft der Diode. In einer Hälfte der Spannungskurve leitet die Diode, die Spannung fällt über dem Widerstand ab und es wird Wirkleistung umgesetzt. In der nächsten Hälfte wird die Diode in Sperrichtung betrieben, es fließt bis auf einen kleinen Leckstrom kein Strom mehr, und es wird keine Leistung mehr umgesetzt.
-Zu sehen ist auch, dass die Diode sich nicht wie eine komplexe Impedanz verhält. Strom und Spannung sind nicht Phasenverschoben, und die Kurve der Momentanleistung ist ausschließlich positiv, von der Schaltung wird nie Leistung abgegeben. Zu bemerken ist auch, dass die Momentanleistung nun die gleiche Frequenz wie die Erregerfrequenz besitzt.
+Zu sehen ist auch, dass die Diode sich nicht wie eine komplexe Impedanz verhält. Strom und Spannung sind nicht phasenverschoben und die Kurve der Momentanleistung ist ausschließlich positiv, von der Schaltung wird nie Leistung abgegeben. Zu bemerken ist auch, dass die Momentanleistung nun die gleiche Frequenz wie die Erregerfrequenz besitzt.
 
 Eine erste Abschätzung der umgesetzten Leistung ergibt sich zu:
 \begin{equation*}
@@ -42,7 +42,7 @@ i(t) = \frac{\hat{I}}{\pi} + \frac{\hat{I}}{2}\sin(\omega t) - \frac{2\hat{I}}{\
 \end{equation}
 Die Spannung wird weiterhin als sinusförmige Spannung der Frequenz $\omega$ betrachtet.
 
-Möchte man nun die Wirkleistung anhand von Formel \eqref{eq:WirkleistungFourier} berechnen, so fallen einige Terme weg. Es gilt insbesondere, dass alle geraden Oberwellen eine Phasenverschiebung von $\varphi_{i\mu} = 90^\circ$ besitzen, alle ungeraden Oberwellen eine Amplitude von 0. Setzt man dies in Gleichung \eqref{eq:WirkleistungFourier} ein erhält man:
+Soll nun die Wirkleistung anhand von Formel \eqref{eq:WirkleistungFourier} berechnet werden, so fallen einige Terme weg. Es gilt insbesondere, dass alle geraden Oberwellen eine Phasenverschiebung von $\varphi_{i\mu} = 90^\circ$ besitzen, alle ungeraden Oberwellen eine Amplitude von 0. Eingesetzt in Gleichung \eqref{eq:WirkleistungFourier} erhält man:
 \begin{equation*}
 P_{ges} = \sum_{\mu=1}^m\frac{\hat{U}\hat{I_\mu}}{2}\cos(-\varphi_{i\mu})
 \end{equation*}

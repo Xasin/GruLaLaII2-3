@@ -4,12 +4,15 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
+\usepackage[table]{xcolor}
+
 \usepackage{graphicx}
 \usepackage{float}
 
 \usepackage[german]{babel}
 
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber, citestyle=authoryear]{biblatex}
+
 \addbibresource{Sources.bib}
 
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
@@ -36,9 +39,11 @@
 \subsection{Messung der Momentanleistung}
 \input{Momentanleistung.tex}
 
+\newpage
 \subsection{Leistung im Resonanzfall}
 \input{Resonanzfall.tex}
 
+\newpage
 \subsection{Leistung einer nichtlinearen Belastung}
 \input{Nichtlinear.tex}
 
@@ -56,6 +61,6 @@
 \section{Literaturverzeichnis}
 \printbibliography
 \newpage
-\section{Verwendete Geräte und Tabellen}
+\input{GeraeteTabellen.tex}
 
 \end{document}
