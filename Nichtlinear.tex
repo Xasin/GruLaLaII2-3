@@ -16,15 +16,15 @@ Wie in Abschnitt \ref{sec:Versuch2.2.1} erläutert wird die Momentanleistungskur
 \label{fig:MomLKurveNichtlinear}
 \end{figure}
 
-Deutlich zu sehen ist die nichtlineare Eigenschaft der Diode. In einer Hälfte der Spannungskurve leitet die Diode, die Spannung fällt über dem Widerstand ab und es wird Wirkleistung umgesetzt. In der nächsten Hälfte wird die Diode in Sperrichtung betrieben, es fließt bis auf einen kleinen Leckstrom kein Strom mehr, und es wird keine Leistung mehr umgesetzt.
+Deutlich zu sehen ist die nichtlineare Eigenschaft der Diode. In einer Hälfte der Spannungskurve leitet die Diode, die Spannung fällt über dem Widerstand ab und es wird Wirkleistung umgesetzt. In der nächsten Hälfte wird die Diode in Sperrichtung betrieben, es fließt nur noch der Strom des potentialtrennenden Transformators sowie ein kleiner Leckstrom, und ein deutlich geringerer Anteil an Wirkleistung wird umgesetzt. Auch der Spannungsabfall der Diode in Durchlassrichtung ist zu erkennen. Strom beginnt erst ab einer gewissen Spannung zu fließen.
 Zu sehen ist auch, dass die Diode sich nicht wie eine komplexe Impedanz verhält. Strom und Spannung sind nicht phasenverschoben und die Kurve der Momentanleistung ist ausschließlich positiv, von der Schaltung wird nie Leistung abgegeben. Zu bemerken ist auch, dass die Momentanleistung nun die gleiche Frequenz wie die Erregerfrequenz besitzt.
 
+Im folgenden werden einige der gemessenen Effekte vernachlässigt, um die Fourier-Analyse in einem verständlichen Umfang zu behalten. Vor allem der Leckstrom wird ignoriert, und es wird von einer perfekten Diode mit 0V Spannungsabfall ausgegangen. 
 Eine erste Abschätzung der umgesetzten Leistung ergibt sich zu:
-\begin{equation*}
+\begin{equation}
 P = \frac{1}{2} UI = \frac{1}{4}\hat{U}\hat{I}
-\end{equation*}
+\end{equation}
 Grund dafür ist, dass sich die Schaltung für eine halbe Periode wie ein ohm'scher Verbraucher verhält, die nächste halbe Periode jedoch wie ein offener Schaltkreis.
-
 Zur Vereinfachung der Fourier-Analyse wird angenommen, dass die Funktion des Stromes wie folgt definiert ist:
 \begin{equation}
 i(t)=\hat{I}\cdot \left\{ 
@@ -34,7 +34,7 @@ i(t)=\hat{I}\cdot \left\{
 \end{array}
 \right.
 \end{equation}
-\cite{calpolyFourier}
+[\cite{calpolyFourier}]
 
 Anhand eines Tabellenbuches für Fourier-Transformationen lässt sich ablesen, dass sich $i(t)$ mit folgender Reihe annähern lässt:
 \begin{equation}
@@ -42,16 +42,16 @@ i(t) = \frac{\hat{I}}{\pi} + \frac{\hat{I}}{2}\sin(\omega t) - \frac{2\hat{I}}{\
 \end{equation}
 Die Spannung wird weiterhin als sinusförmige Spannung der Frequenz $\omega$ betrachtet.
 
-Soll nun die Wirkleistung anhand von Formel \eqref{eq:WirkleistungFourier} berechnet werden, so fallen einige Terme weg. Es gilt insbesondere, dass alle geraden Oberwellen eine Phasenverschiebung von $\varphi_{i\mu} = 90^\circ$ besitzen, alle ungeraden Oberwellen eine Amplitude von 0. Eingesetzt in Gleichung \eqref{eq:WirkleistungFourier} erhält man:
-\begin{equation*}
+Soll nun die Wirkleistung anhand von Formel \eqref{eq:WirkleistungFourier} berechnet werden, so fallen einige Terme weg. Es gilt insbesondere, dass alle geraden Oberwellen eine Phasenverschiebung von $\varphi_{i\mu} = 90^\circ$ besitzen, alle ungeraden Oberwellen eine Amplitude von 0. Eingesetzt in Gleichung \eqref{eq:WirkleistungFourier} ergibt dies:
+\begin{equation}
 P_{ges} = \sum_{\mu=1}^m\frac{\hat{U}\hat{I_\mu}}{2}\cos(-\varphi_{i\mu})
-\end{equation*}
+\end{equation}
 
 Es fallen also alle Terme bis auf die Grundschwingung weg. Diese besitzt eine Amplitude von $\hat{I}_{1}=\frac{\hat{I}}{2}$. Eingesetzt in die obige Gleichung ergibt sich:
 
-\begin{equation*}
+\begin{equation}
 P_{ges} = \frac{\hat{U}\hat{I}}{4}
-\end{equation*}
+\end{equation}
 Dies stimmt exakt mit der obigen Vermutung überein. Die Schaltung aus Diode und Widerstand nimmt also in etwa die Hälfte der Leistung eines reinen Widerstandes gleicher Größe auf.
 
 \newpage

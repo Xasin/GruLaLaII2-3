@@ -7,7 +7,7 @@ Der Versuchsaufbau ähnelt weitestgehend dem in Abschnitt \ref{sec:Aufbau2.2.1} 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\linewidth]{Images/Aufbau2-2.png}
-\caption{Schaltplan eines Versuches zur Messung der Wirkleistung eines Schaltkreises [\cite[49]{GEMLBuch}]}
+\caption{Schaltplan eines Versuches zur Messung der Wirkleistung eines Schaltkreises \cite[49]{GEMLBuch}}
 \label{fig:Plan2-2}
 \end{figure}
 Die Impedanzen $Z_1$ bis $Z_3$ werden je nach zu messender Größe verändert.
@@ -46,7 +46,8 @@ Im Folgenden wird $Z_2$ variiert. Die Spannung $\overline{u_P}$ wird abgelesen u
 \\
 Die aufgenommenen Messwerte sind in Tabelle \ref{tab:Wirkleistungen} zu sehen.
 
-Zu erkennen ist eine relativ genaue Übereinstimmung der gemessenen Werte mit den berechneten. Ungenauigkeiten beim Ablesen der analogen Skala am Messgerät erklären die konstanten Werte zwischen $Z_2 = 40\Omega$ und $60\Omega$, weitere Abweichungen von den berechneten Werten können durch Messfehler bei der Bestimmung des Faktors K und dem Offset entstehen. Auch ist es möglich, dass $Z_1 \mbox{ bis } Z_2$ nicht die angegebenen Werte besitzen, d.h. die berechnete Wirkleistung kann auch fehlerbehaftet sein.
+Zu erkennen ist eine relativ genaue Übereinstimmung der gemessenen Werte mit den berechneten. Bei ansteigendem $R$ steigt zuerst die Leistung, von $0.759W$ bei $30\Omega$, auf $0.780$ zwischen $40\Omega$ und $60\Omega$. Danach fällt sie auf $0.709W$ bei $80\Omega$ ab. Diese Verhalten der ansteigenden Leistung bei steigendem R lässt sich durch eine Versorgung mit einer reellen Spannungsquelle erklären, dessen Innenwiderstand größer ist als der Verbraucherwiderstand. Die größte Abgabe der Leistung liegt hier vor, wenn $R_i = R$ ist. Anhand der Messwerte wäre dies zwischen $40\Omega$ und $50\Omega$. Die reelle Spannungsquelle setzt sich in diesem Schaltkreis aus der 10V-Spannungsquelle und dem einstellbaren Widerstand $R_I$ zusammen.
+Ungenauigkeiten beim Ablesen der analogen Skala am Messgerät erklären die konstanten Werte zwischen $Z_2 = 40\Omega$ und $60\Omega$, weitere Abweichungen von den berechneten Werten können durch Messfehler bei der Bestimmung des Faktors K und dem Offset entstehen. Auch ist es möglich, dass $Z_1 \mbox{ bis } Z_3$ nicht die angegebenen Werte besitzen, d.h. die berechnete Wirkleistung kann auch fehlerbehaftet sein.
 
 \subsubsection{Messung der Blindleistung}
 Dieser Versuchsteil befasst sich mit der Messung der Blindleistung der bereits im vorherigen Abschnitt verwendeten Impedanzen. Anhand der Formel \eqref{eq:ScheinleistungPythagoras} werden zusätzlich die Messergebnisse miteinander verglichen.
@@ -54,12 +55,12 @@ Dieser Versuchsteil befasst sich mit der Messung der Blindleistung der bereits i
 Um die Blindleistung mit möglichst wenig Aufwand, d.h. hier mit möglichst wenig Modifikation an der vorliegenden Schaltung messen zu können, wird wie in Abschnitt \ref{sec:MessungBlindleistung} erläutert, ein Kondensator in den Spannungspfad des Messgerätes eingebaut, um dessen Phase um $90^\circ$ zu drehen. Hiermit gibt der Gleichanteil der Spannung $u_P$ die Blindleistung, nicht mehr die Wirkleistung, an.
 
 Es wird ein Kondensator von $C=2nF$ direkt hinter $T_2$ geschaltet. Dessen Größe wurde so bemessen, dass eine Phasenverschiebung von ca. $84^\circ$ möglich ist ohne dass das Spannungssignal zu klein wird. $u_U$ ist nun durch die Impedanz des Kondensators etwa 10 mal kleiner, der Kalibrierungsfaktor $K$ muss dementsprechend angepasst werden. Es gilt jetzt:
-\begin{equation*}
+\begin{equation}
 K_{Q} = 10\cdot K = 20.21A
-\end{equation*}
+\end{equation}
 
 Für die gleichen Impedanzen wie zuvor werden nun die Spannungen $\overline{u_P}$ gemessen und die Blindleistungen berechnet. Gesamtströme und -spannungen sind aus den vorherigen Messungen bekannt. Die anhand von Formel \eqref{eq:KomplexQ} berechnete Blindleistung wird zum Vergleich aufgeschrieben. Die Ergebnisse sind in Tabelle \ref{tab:Blindleistungen} zu sehen.
 
-Auch hier ist eine gute Übereinstimmung der Messwerte mit den berechneten Werten erkennbar. Diskrepanzen lassen sich wie zuvor durch ein falsch bestimmtes K, Ablese- und Messfehler erklären. Einzubeziehen ist auch, dass die Phasenverschiebung nur ca. $84^\circ$ beträgt, und der genaue Wert des Kondensators nicht exakt $2nF$ sein muss.
+Auch hier stimmen die gemessenen Werte in etwa mit den berechneten Werten überein, vor allem das Verhalten der Leistungsänderung ist sehr ähnlich. So fallen z.B. beide Messreihen um ca. $0.3var$ zwischen $Z_2=30\Omega$ und $Z_2=80\Omega$ ab. Auch die Form des Abfalls ist gleich, mit ca. $0.8var$ bei einer Änderung von $Z_2=30\Omega$ auf $40\Omega$, jedoch nur $0.4var$ von $70\Omega$ auf $80\Omega$. Diskrepanzen lassen sich wie zuvor durch ein falsch bestimmtes K, Ablese- und Messfehler erklären. Einzubeziehen ist auch, dass die Phasenverschiebung nur ca. $84^\circ$ beträgt, und der genaue Wert des Kondensators nicht exakt $2nF$ sein muss.
 
 Schlussendlich lassen sich nun die Messwerte anhand von Formel \eqref{eq:ScheinleistungPythagoras} miteinander vergleichen. $S_1$ wird hierbei mit der Beziehung $S=U\cdot I$ berechnet, $S_2$ anhand von Formel \eqref{eq:ScheinleistungPythagoras}. Die Ergebnisse sind in Tabelle \ref{tab:Scheinleistungen} aufgeführt.
