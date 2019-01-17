@@ -6,33 +6,33 @@ Der in diesem Protokoll beschriebene Versuch \textit{Leistung bei Wechselstrom} 
 Die Grundlage der Leistungsberechnung stellt die Leistung bei harmonischer Erregung dar. Sie beschreibt für ein gegebenes lineares Netzwerk mit sinusförmigen Strömen und Spannungen die abgegebene oder aufgenommene Leistung mithilfe der komplexen Wechselstromrechnung.\\
 \\
 Für den Fall von $f=0$, d.h. bei einer Erregung mit Gleichstrom, gilt:
-\begin{align*}
-P=U\cdot I
-\end{align*}
+\begin{align}
+P=U\cdot I \label{eq:SimpleP}
+\end{align}
 \\
-Liegt jedoch eine harmonische Erregung vor, so gilt der obige Term nicht mehr. Strom und Spannung sind nun zeitlich abhängig und können phasenverschoben sein, weshalb man den Zeitpunkt $t$ mit in die Formel aufnehmen muss. Es ergibt sich so der Term der \textit{Momentanleistung}:
+Liegt jedoch eine harmonische Erregung vor, so Gleichung \eqref{eq:SimpleP} nicht mehr. Strom und Spannung sind nun zeitlich abhängig und können phasenverschoben sein, weshalb der Zeitpunkt $t$ mit in die Formel aufgenommen werden muss. Es ergibt sich so der Term der \textit{Momentanleistung}:
 \begin{equation} \label{eq:Momentanleistung}
 p(t)=u(t)\cdot i(t)
 \end{equation}
 \\
 Dieser gilt nun für alle Arten von Erregung und Belastung. Im Falle der harmonischen Erregung eines Verbrauchers mit den Größen:
-\begin{align*}
+\begin{align}
 u(t) &= \hat{U}\sin(\omega t + \varphi_u)\\
 i(t) &= \hat{I}\sin(\omega t + \varphi_i)
-\end{align*}
+\end{align}
 lässt sich Formel \eqref{eq:Momentanleistung} schreiben als:
 \begin{small}
 \begin{eqnarray}
-&p(t)=&\hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i) \nonumber \\
+&p(t)=&\hat{U}\sin(\omega t + \varphi_u) \cdot \hat{I}\sin(\omega t + \varphi_i) \\
 \Leftrightarrow & p(t) =&\frac{\hat{U}\hat{I}}{2}\left[\underbrace{\cos(\varphi_u-\varphi_i)[1-\cos(2(\omega t + \varphi_u))]}_{p_w(t)}-\underbrace{\sin(\varphi_u-\varphi_i)\cdot\sin(2(\omega t + \varphi_u))}_{p_B(t)}\right] \label{eq:MomLeistungSplit}
 \end{eqnarray}
 \end{small}
 
 Bei genauerer Betrachtung von Formel \eqref{eq:MomLeistungSplit} wird festgestellt:
 \begin{enumerate}
-\item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(\mathbf{2\omega t} + 2\varphi_u)$ bzw. $\sin(\mathbf{2\omega t} + 2\varphi_u)$.
+\item Der Term der Leistung hat die doppelte Frequenz der ursprünglichen Erregung, erkennbar an $\cos(2\omega t + 2\varphi_u)$ bzw. $\sin(2\omega t + 2\varphi_u)$.
 
-\item Der Durchschnitt der Leistung liegt nicht bei null. Es wird im Durschnitt eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
+\item Der zeitliche Mittelwert der Leistung liegt nicht bei null. Es wird stattdessen eine Leistung, die sog. Wirkleistung, aufgenommen. Sie entspricht:
 \begin{equation}
 P = \frac{\hat{U}\hat{I}}{2}\cos(\varphi_u-\varphi_i) \label{eq:LeistungGleichanteil}
 \end{equation}
@@ -51,7 +51,7 @@ S^2=P^2 + Q^2 = \left(\frac{\hat{U}\hat{I}}{2}\right)^2\cdot \underbrace{(\cos(\
 \label{eq:ScheinleistungPythagoras}
 \end{equation}
 
-Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdrücken. Diese kodiert den Phasenwinkel von Strom und Spannung im Argument der komplexen Zahl, während die Amplitude der Schwingungen im Betrag zu finden ist. Man kann so also auch schreiben:
+Die obigen Formeln lassen sich auch mit der Komplexen Wechselstromrechnung ausdrücken. Diese kodiert den Phasenwinkel von Strom und Spannung im Argument der komplexen Zahl, während die Amplitude der Schwingungen im Betrag zu finden ist. So lässt sich die Scheinleistung auch wie folgt berechnen:
 \begin{equation}
 \underline{S} = \underline{U}\cdot\underline{I}^* = UI\cdot e^{i(\varphi_u-\varphi_i)} \label{eq:KomplexS}
 \end{equation}
@@ -75,7 +75,7 @@ Durch ähnliche trigonometrische Umformungen wie die in Gleichung \eqref{eq:MomL
 p_{\mu\nu}(t)=\frac{\hat{U}_\mu\hat{I}_\nu}{2}\left[\cos((\mu-\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))-\cos((\mu+\nu)\omega t + (\varphi_{u\mu}-\varphi_{i\nu}))\right]
 \end{equation}
 
-Aus dieser Gleichung kann man erkennen, dass nur Oberwellen gleicher Frequenz einen Gleichanteil, und somit Wirkleistung, beitragen können. Alle anderen Kombinationen schwingen immer um 0, und tragen somit nur zur Blindleistung bei.
+Aus dieser Gleichung lässt sich erkennen, dass nur Oberwellen gleicher Frequenz einen Gleichanteil, und somit Wirkleistung, beitragen können. Alle anderen Kombinationen schwingen immer um 0, und tragen somit nur zur Blindleistung bei.
 
 Die Wirkleistung eines nichtharmonischen bzw. nichtliearen Systemes lässt sich somit berechnen als:
 \begin{equation}
@@ -95,7 +95,7 @@ Oszilloskope besitzen zusätzlich eine Funktion zum Multiplizieren der Spannungs
 \subsubsection{Wirkleistungsmessung}
 Ist nur der Betrag der Wirkleistung, nicht aber die genaue Form, Phasenverschiebung oder die Blindleistung von Interesse, so können auch träge Messgeräte, welche den Mittelwert eines hochfrequenten Signals bilden, zusammen mit einem sog. Multiplikator verwendet werden, um die in einem Verbraucher aufgenommene Wirkleistung zu bestimmen. Der Multiplikator kann hierbei entweder dem Messgerät vorgeschaltet sein oder aber im Messgerät selbst durch mechanische Verfahren eingebaut sein.
 
-Wird an den Eingängen des Multiplikators nun die am Verbraucher anliegende Spannung und die über einen Messwiderstand abfallende, zum Strom proportionale Spannung, angelegt, so bildet dieser nun nach Gleichung \eqref{eq:Momentanleistung} einen zur Momentanleistung proportionalen Wert. Wird dieser an ein träges Messgerät angeschlossen, so bildet dieses bei höheren Frequenzen den Durchschnitt der Momentanleistung, d.h. nach Gleichung \eqref{eq:MomLeistungSplit} einen zur Wirkleistung proportionalen Wert. Durch Bestimmung der Proportionalitätskonstante kann nun aus dem Ausschlag des Messgerätes die Wirkleistung abgelesen werden.
+Wird an den Eingängen des Multiplikators die am Verbraucher anliegende Spannung und die über einen Messwiderstand abfallende, zum Strom proportionale Spannung, angelegt, so bildet dieser nun nach Gleichung \eqref{eq:Momentanleistung} einen zur Momentanleistung proportionalen Wert. Wird dieser an ein träges Messgerät angeschlossen, so bildet dieses bei höheren Frequenzen den Durchschnitt der Momentanleistung, d.h. nach Gleichung \eqref{eq:MomLeistungSplit} einen zur Wirkleistung proportionalen Wert. Durch Bestimmung der Proportionalitätskonstante kann nun aus dem Ausschlag des Messgerätes die Wirkleistung abgelesen werden.
 
 \subsubsection{Blindleistungsmessung}
 \label{sec:MessungBlindleistung}
